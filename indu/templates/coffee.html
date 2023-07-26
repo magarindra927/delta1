@@ -1,0 +1,25 @@
+{% extends 'layouts/main.html' %}
+{% block content %}    
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        {% for coffee in coffeeData %}
+            <div class="col-md-4 mt-5 mb-5">                       
+                <div class="card">
+                    {% if coffee.photo %}
+                    <img class="card-img-top" src="{{ coffee.photo.url }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">                      
+                      <p class="card-text">{{ coffee.content | safe }}</p>
+                      <a href="#" class="btn btn-primary">Price of Coffee</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}           
+    </div>
+</div>
+
+
+
+{% endblock %}
